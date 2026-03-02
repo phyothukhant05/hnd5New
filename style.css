@@ -1,0 +1,145 @@
+/* GLOBAL */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+/* NAVIGATION */
+
+.glass-nav{
+    position:absolute;
+    top:40px;
+    display:flex;
+    gap:40px;
+    padding:15px 60px;
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 0 20px rgba(255,255,255,0.1);
+    transition:0.4s cubic-bezier(.16,1,.3,1);
+    z-index:10;
+}
+
+.glass-nav:hover{
+    box-shadow:0 0 45px rgba(255,255,255,0.6);
+    background:rgba(255,255,255,0.15);
+}
+
+.glass-nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.glass-nav a:hover{
+    text-shadow:0 0 12px white;
+}
+
+/* CARD */
+
+.card{
+    position:relative;
+    width:360px;
+    text-align:center;
+}
+
+/* Image */
+
+.card img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+    position:relative;
+    z-index:2;
+    transition:0.6s cubic-bezier(.16,1,.3,1);
+    /* o.6 duration for transition and where to speed up and slow at x1, y1, x2 ,y2 */
+}
+
+/* Image hover lift */
+
+.card:hover img{
+    transform:translateY(-25px) scale(1.05);
+    box-shadow:0 25px 60px rgba(255,255,255,0.4);
+}
+
+/* GLASS INFO BOX */
+
+.glass-box{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:25px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 0 20px rgba(255,255,255,0.1);
+
+    transform:translateY(-40%);
+    opacity:0;
+    z-index:1;
+
+    transition:0.6s cubic-bezier(.16,1,.3,1);
+}
+
+/* Drop animation */
+
+.card:hover .glass-box{
+    transform:translateY(75%);
+    opacity:1;
+}
+
+/* TEXT */
+
+.glass-box h2{
+    color:white;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.glass-box p{
+    color:#ddd;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.socials a{
+    color:white;
+    font-size:22px;   /* All same size */
+    transition:0.3s;
+}
+
+/* White glow on hover */
+
+.socials a:hover{
+    text-shadow:0 0 15px white;
+    transform:scale(1.2);
+}
